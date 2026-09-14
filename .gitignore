@@ -54,3 +54,11 @@ events.out.tfevents.*
 /option_files/*
 !/option_files/example.json
 /docs/cleanup.md
+
+# Local-only development files excluded from the public repository.
+/.github/workflows/
+/docs/
+/tests/
+/THIRD_PARTY_NOTICES.md
+/evaluate.py
+/pyproject.toml
