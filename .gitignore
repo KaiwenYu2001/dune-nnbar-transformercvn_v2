@@ -1,0 +1,56 @@
+# Publish only these root-level project files and directories.
+/*
+!/.gitignore
+!/README.md
+!/THIRD_PARTY_NOTICES.md
+!/LICENSE*
+!/NOTICE*
+!/CITATION.cff
+!/CONTRIBUTING.md
+!/pyproject.toml
+!/train.py
+!/evaluate.py
+!/Evaluate.ipynb
+!/transformercvn/
+!/option_files/
+!/docs/
+!/tests/
+!/.github/
+
+# Python and development environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+.DS_Store
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.local.json
+# Data, model weights, logs and generated figures
+data/
+outputs/
+lightning_logs/
+checkpoints/
+train_*/
+*.h5
+*.hdf5
+*.ckpt
+*.pt
+*.pth
+*.onnx
+events.out.tfevents.*
+
+# Keep personal experiment configurations and cleanup notes local.
+/option_files/*
+!/option_files/example.json
+/docs/cleanup.md

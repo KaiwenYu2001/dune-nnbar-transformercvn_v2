@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transformercvn"
+version = "0.1.0"
+description = "CNN and transformer models for neutrino and neutron-antineutron event classification"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=1.13,<2.1",
+    "pytorch-lightning>=1.9,<2",
+    "torchmetrics>=0.11,<0.12",
+    "numpy>=1.23,<2",
+    "h5py>=3.7,<4",
+    "scikit-learn>=1.1,<2",
+    "tensorboard>=2.10,<3",
+    "rich>=12,<14",
+]
+
+[project.optional-dependencies]
+legacy = ["transformers>=4.20,<5", "numba>=0.56", "parameter-sherpa>=1"]
+sdxl = ["diffusers>=0.18,<0.20", "huggingface-hub<0.26"]
+evaluation = ["matplotlib>=3.6,<4", "jupyterlab>=3,<5"]
+dev = ["ruff==0.16.7", "pytest>=7,<10"]
+
+[tool.setuptools.packages.find]
+include = ["transformercvn*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+extend-exclude = ["Evaluate.ipynb"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+ignore = ["E741"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/__init__.py" = ["F401"]
+"transformercvn/network/layers/prong_layers.py" = ["F401"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
