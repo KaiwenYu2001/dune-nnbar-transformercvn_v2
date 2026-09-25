@@ -60,7 +60,6 @@ events.out.tfevents.*
 /docs/
 /tests/
 /THIRD_PARTY_NOTICES.md
-/evaluate.py
 /pyproject.toml
 
 # Published best checkpoint from the July 13 training run.
