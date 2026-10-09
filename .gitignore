@@ -62,5 +62,5 @@ events.out.tfevents.*
 /THIRD_PARTY_NOTICES.md
 /pyproject.toml
 
-# Published best checkpoint from the July 13 training run.
-!/nnbar_best.ckpt
+# Published model checkpoint.
+!/model.ckpt
