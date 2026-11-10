@@ -106,3 +106,12 @@ copyright or attribution notices; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTIC
 The repository owner must resolve the missing upstream license material and choose
 an appropriate license before release. No permission from upstream authors is
 implied by this code cleanup.
+
+## Model codes
+
+The nnbar training files carry an integer `model` column per event, written by the
+preprocessing of `nnbar-production` (`cvn/preprocess_atmnu.py`) as an index into
+`["atm", "ha_lfg", "hn_lfg", "ha_esf", "hn_esf", "ha_br", "hn_br"]` (0 to 6); newer files also
+store this list as the `model_names` attribute. `evaluate.py` copies the per-event code of the
+exported rows into the predictions file as `event_model`, with `model_names` as an attribute, so
+per-model efficiencies can be labelled without assuming an order.
